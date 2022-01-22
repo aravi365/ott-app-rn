@@ -11,12 +11,13 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		218472A94F1B482CACB7F5EC /* AvenirNext-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4FDD85C5838149D6A788E52B /* AvenirNext-Regular.otf */; };
-		439F761CEAC740908E84B909 /* AvenirNext-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0134D0E8D2CA43B7B2AF0170 /* AvenirNext-Bold.otf */; };
-		6400281CB20949D0A70341E9 /* AvenirNext-DemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6FC99E6DD5B845F08F3D6E1A /* AvenirNext-DemiBold.ttf */; };
+		24679E34D2944558AD183FF1 /* TitilliumWeb-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67B4C82280B64F13B287FBFB /* TitilliumWeb-Regular.ttf */; };
+		66110928933343AABB2A5C56 /* TitilliumWeb-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA019E3DCF2C446EB3205757 /* TitilliumWeb-Light.ttf */; };
+		7F0DA1023CC24609B8F92140 /* TitilliumWeb-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCF9C442E83341378ED4E887 /* TitilliumWeb-Black.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		9B436AE976314E39A969FB35 /* AvenirNext-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B6009C733A3D4ABFB12A6B69 /* AvenirNext-Italic.otf */; };
 		C8DD70A49B3C2DD56C8CB713 /* libPods-OTT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0AF1332B4703CB829E9215 /* libPods-OTT.a */; };
+		CECF383A98724B618F8A9CC1 /* TitilliumWeb-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F11B8C038AB84A799680B43E /* TitilliumWeb-Bold.ttf */; };
+		F1AF57F67D7B44FD9C5C42DD /* TitilliumWeb-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 782C14AF52124649B15B72C9 /* TitilliumWeb-SemiBold.ttf */; };
 		F5047133CF261F1A56232553 /* libPods-OTT-OTTTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 927B014D47279E38DD28C61E /* libPods-OTT-OTTTests.a */; };
 /* End PBXBuildFile section */
 
@@ -44,14 +45,19 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = OTT/main.m; sourceTree = "<group>"; };
 		4A0AF1332B4703CB829E9215 /* libPods-OTT.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OTT.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FDD85C5838149D6A788E52B /* AvenirNext-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNext-Regular.otf"; path = "../src/assets/fonts/AvenirNext-Regular.otf"; sourceTree = "<group>"; };
+		67B4C82280B64F13B287FBFB /* TitilliumWeb-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TitilliumWeb-Regular.ttf"; path = "../src/assets/fonts/TitilliumWeb-Regular.ttf"; sourceTree = "<group>"; };
 		6FC99E6DD5B845F08F3D6E1A /* AvenirNext-DemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNext-DemiBold.ttf"; path = "../src/assets/fonts/AvenirNext-DemiBold.ttf"; sourceTree = "<group>"; };
+		782C14AF52124649B15B72C9 /* TitilliumWeb-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TitilliumWeb-SemiBold.ttf"; path = "../src/assets/fonts/TitilliumWeb-SemiBold.ttf"; sourceTree = "<group>"; };
 		7E94A9E0CE70DC0C6B969C72 /* Pods-OTT-OTTTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTT-OTTTests.release.xcconfig"; path = "Target Support Files/Pods-OTT-OTTTests/Pods-OTT-OTTTests.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = OTT/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		927B014D47279E38DD28C61E /* libPods-OTT-OTTTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OTT-OTTTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6009C733A3D4ABFB12A6B69 /* AvenirNext-Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "AvenirNext-Italic.otf"; path = "../src/assets/fonts/AvenirNext-Italic.otf"; sourceTree = "<group>"; };
 		BCB7EC0983082DF027B25D05 /* Pods-OTT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTT.debug.xcconfig"; path = "Target Support Files/Pods-OTT/Pods-OTT.debug.xcconfig"; sourceTree = "<group>"; };
 		C1DDE2F8F5C6AE7980A49FA7 /* Pods-OTT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTT.release.xcconfig"; path = "Target Support Files/Pods-OTT/Pods-OTT.release.xcconfig"; sourceTree = "<group>"; };
+		CA019E3DCF2C446EB3205757 /* TitilliumWeb-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TitilliumWeb-Light.ttf"; path = "../src/assets/fonts/TitilliumWeb-Light.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F11B8C038AB84A799680B43E /* TitilliumWeb-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TitilliumWeb-Bold.ttf"; path = "../src/assets/fonts/TitilliumWeb-Bold.ttf"; sourceTree = "<group>"; };
+		FCF9C442E83341378ED4E887 /* TitilliumWeb-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "TitilliumWeb-Black.ttf"; path = "../src/assets/fonts/TitilliumWeb-Black.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +170,11 @@
 				6FC99E6DD5B845F08F3D6E1A /* AvenirNext-DemiBold.ttf */,
 				B6009C733A3D4ABFB12A6B69 /* AvenirNext-Italic.otf */,
 				4FDD85C5838149D6A788E52B /* AvenirNext-Regular.otf */,
+				FCF9C442E83341378ED4E887 /* TitilliumWeb-Black.ttf */,
+				F11B8C038AB84A799680B43E /* TitilliumWeb-Bold.ttf */,
+				CA019E3DCF2C446EB3205757 /* TitilliumWeb-Light.ttf */,
+				67B4C82280B64F13B287FBFB /* TitilliumWeb-Regular.ttf */,
+				782C14AF52124649B15B72C9 /* TitilliumWeb-SemiBold.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -264,10 +275,11 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				439F761CEAC740908E84B909 /* AvenirNext-Bold.otf in Resources */,
-				6400281CB20949D0A70341E9 /* AvenirNext-DemiBold.ttf in Resources */,
-				9B436AE976314E39A969FB35 /* AvenirNext-Italic.otf in Resources */,
-				218472A94F1B482CACB7F5EC /* AvenirNext-Regular.otf in Resources */,
+				7F0DA1023CC24609B8F92140 /* TitilliumWeb-Black.ttf in Resources */,
+				CECF383A98724B618F8A9CC1 /* TitilliumWeb-Bold.ttf in Resources */,
+				66110928933343AABB2A5C56 /* TitilliumWeb-Light.ttf in Resources */,
+				24679E34D2944558AD183FF1 /* TitilliumWeb-Regular.ttf in Resources */,
+				F1AF57F67D7B44FD9C5C42DD /* TitilliumWeb-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

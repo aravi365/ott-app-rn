@@ -1,10 +1,11 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import {StyleSheet, Text, View} from 'react-native';
+import React from 'react';
+import fonts from '../../theme/fonts';
 
 export default function Home() {
   return (
     <View style={styles.container}>
-      <Text>Hello world</Text>
+      <Text style={{fontFamily: fonts.type.TSemiBold}}>Hello world</Text>
     </View>
   );
 }
@@ -12,8 +13,8 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     // backgroundColor: "red",
   },
 });
