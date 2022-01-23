@@ -1,7 +1,7 @@
 /*
  * platform/application wide metrics for proper styling
  */
-import {Dimensions} from 'react-native';
+import {Dimensions, Platform, StatusBar} from 'react-native';
 const {width, height} = Dimensions.get('window');
 
 const metrics = {
@@ -9,4 +9,7 @@ const metrics = {
   screenHeight: width < height ? height : width,
 };
 
-export default metrics;
+const hasNotch =
+  Platform.OS === 'android' ? StatusBar.currentHeight > 24 : false;
+
+export default {metrics, hasNotch};

@@ -6,6 +6,7 @@ import {
   Image,
   ImageBackground,
   Pressable,
+  Platform,
 } from 'react-native';
 import React from 'react';
 import colors from '../../theme/colors';
@@ -15,6 +16,7 @@ import {
 } from 'react-native-responsive-screen';
 import images from '../../assets/images';
 import fonts from '../../theme/fonts';
+import metrics from '../../theme/metrics';
 
 export default function Header({
   title = 'No Title',
@@ -26,7 +28,7 @@ export default function Header({
 }) {
   return (
     <View style={styles.container}>
-      <SafeAreaView />
+      {/* <SafeAreaView /> */}
       <ImageBackground style={styles.imgBackground} source={images.navbar}>
         <View style={styles.innerContainer1}>
           <Pressable
@@ -49,8 +51,7 @@ export default function Header({
 
 const styles = StyleSheet.create({
   container: {
-    height: hp('10%'),
-    width: wp('100%'),
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     zIndex: 10001,
@@ -59,14 +60,29 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 0,
     width: wp('100%'),
-    height: hp('18%'),
+
     backgroundColor: 'transparent',
+    ...Platform.select({
+      android: {
+        height: hp('12%'),
+      },
+      ios: {
+        height: hp('18%'),
+      },
+    }),
   },
   innerContainer1: {
-    marginVertical: hp('6%'),
     flexDirection: 'row',
     alignItems: 'center',
     marginHorizontal: wp('1%'),
+    ...Platform.select({
+      android: {
+        marginTop: metrics.hasNotch ? hp('4%') : hp('2%'),
+      },
+      ios: {
+        marginTop: hp('6%'),
+      },
+    }),
   },
   leftButtonImg: {
     height: hp('4%'),

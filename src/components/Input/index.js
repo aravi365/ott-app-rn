@@ -42,9 +42,9 @@ export default function Input({
 
 const styles = StyleSheet.create({
   input: {
-    height: hp('4%'),
+    height: hp('6%'),
     color: colors.white,
     fontFamily: fonts.type.TRegular,
-    fontSize: fonts.size.font3,
+    // fontSize: fonts.size.font3,
   },
 });
