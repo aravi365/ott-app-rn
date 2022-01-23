@@ -14,22 +14,48 @@ import MovieTile from '../../components/MovieTile';
 import * as listActions from '../../redux/actions/listActions';
 import {useDispatch, useSelector} from 'react-redux';
 import Input from '../../components/Input';
-
+import EmptyComp from '../../components/EmptyComponent';
+import {useDebouncedEffect} from '../../hooks/useDebouncedEffect';
 export default function Home({navigation, navigate}) {
   const dispatch = useDispatch();
   const [searchMode, setSearchMode] = React.useState(false);
   const [input, setInput] = React.useState('');
 
+  //load first page data at first
   React.useEffect(() => {
     dispatch(listActions.fetchData(currentPage));
   }, [navigation]);
 
-  const {currentPage, data, isLoading, totalCount} = useSelector(
+  //debounce for search with custom hook
+  const debouncedTitle = useDebouncedEffect(input, 800);
+
+  //search from the reducer using search string
+  React.useEffect(() => {
+    dispatch(listActions.searchMovie(input));
+  }, [debouncedTitle]);
+
+  //get stored values from the listReducer
+  const {currentPage, data, isLoading, totalCount, dataSearch} = useSelector(
     state => state.listReducer,
   );
+
+  //handle end reached case for pagination
   const handleEndReached = () => {
-    if (data.length < totalCount)
+    if (data.length < totalCount) {
       dispatch(listActions.fetchData(currentPage + 1));
+    }
+  };
+
+  //handle textinput change
+  const handleChangeText = text => {
+    setInput(text);
+  };
+
+  //toggle search mode,clear input
+  const handleRightPress = () => {
+    setSearchMode(prevState => !prevState);
+    setInput('');
+    dispatch(listActions.searchMovie(input));
   };
   return (
     <View style={styles.container}>
@@ -37,10 +63,14 @@ export default function Home({navigation, navigate}) {
         leftItem={
           <Image style={styles.leftButtonImg} source={images.backArrow} />
         }
+        leftItemOnPress={() => setSearchMode(false)}
         centreItem={
           searchMode ? (
             <View style={styles.inputWrapper}>
-              <Input onChangeText={text => setInput(text)} value={input} />
+              <Input
+                onChangeText={text => handleChangeText(text)}
+                value={input}
+              />
             </View>
           ) : (
             <Text style={styles.titleText}>{strings.listing.rc_title}</Text>
@@ -53,14 +83,16 @@ export default function Home({navigation, navigate}) {
             <Image style={styles.rightButtonImg} source={images.search} />
           )
         }
-        rightItemOnPress={() => setSearchMode(prevState => !prevState)}
+        rightItemOnPress={() => handleRightPress()}
       />
       {!isLoading ? (
         <FlatList
+          keyExtractor={(item, index) => index.toString()}
+          ListEmptyComponent={<EmptyComp />}
           showsVerticalScrollIndicator={false}
           numColumns={3}
           style={styles.flStyle}
-          data={data}
+          data={searchMode ? dataSearch : data}
           renderItem={({item, index}) => (
             <MovieTile title={item?.name} img={item['poster-image']} />
           )}

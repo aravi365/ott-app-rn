@@ -18,3 +18,9 @@ export function storeData(data) {
     data,
   };
 }
+export function searchMovie(string) {
+  return {
+    type: types.SEARCH_MOVIE,
+    string,
+  };
+}
