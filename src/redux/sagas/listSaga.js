@@ -8,6 +8,5 @@ export default function* listSaga(action) {
     return json['page' + action.page];
   }
   const response = yield call(getData);
-  console.log('page resp', response);
   yield put(listActions.storeData(response));
 }
