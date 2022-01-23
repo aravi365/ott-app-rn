@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import {Image, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {
@@ -10,9 +11,25 @@ import colors from '../../theme/colors';
 export default function MovieTile({title = 'Untitled', img}) {
   //to extract filename without extension
   let name = img.replace(/\.[^/.]+$/, '');
+  const [imgUri, setImgUri] = React.useState('');
+
+  //asign image from local
+  React.useEffect(() => {
+    setImgUri(images[name]);
+  }, []);
+
+  //handle image load error case
+  const onError = () => {
+    setImgUri(null);
+  };
+
   return (
     <View style={styles.container}>
-      <Image style={styles.movieImg} source={images[name]} />
+      <Image
+        onError={() => onError()}
+        style={styles.movieImg}
+        source={imgUri ? imgUri : images.missingPlaceholder}
+      />
       <Text numberOfLines={1} style={styles.titleText}>
         {title}
       </Text>
@@ -31,5 +48,5 @@ const styles = StyleSheet.create({
     height: hp('24%'),
     resizeMode: 'contain',
   },
-  titleText: {color: colors.white, marginTop: hp('1%'), width: wp('30%')},
+  titleText: {color: colors.white, marginTop: hp('0.5%'), width: wp('30%')},
 });
