@@ -12,6 +12,7 @@ const images = {
   poster9: require('./poster9.jpg'),
   missingPlaceholder: require('./placeholder_for_missing_posters.png'),
   navbar: require('./nav_bar.png'),
+  close: require('./close.png'),
 };
 
 export default images;
