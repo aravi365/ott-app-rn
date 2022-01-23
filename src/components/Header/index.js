@@ -38,7 +38,7 @@ export default function Header({
           </Pressable>
           {centreItem}
           <Pressable
-            style={{position: 'absolute', right: wp('2.5%')}}
+            style={styles.rightButton}
             hitSlop={{top: 5, left: 5, right: 5, bottom: 5}}
             onPress={rightItemOnPress}>
             {rightItem}
@@ -100,4 +100,5 @@ const styles = StyleSheet.create({
     fontSize: fonts.size.font2,
     marginLeft: wp('3%'),
   },
+  rightButton: {position: 'absolute', right: wp('2.5%')},
 });
