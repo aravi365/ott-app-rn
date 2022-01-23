@@ -13,7 +13,9 @@ export default function MovieTile({title = 'Untitled', img}) {
   return (
     <View style={styles.container}>
       <Image style={styles.movieImg} source={images[name]} />
-      <Text style={{color: colors.white}}>{title}</Text>
+      <Text numberOfLines={1} style={styles.titleText}>
+        {title}
+      </Text>
     </View>
   );
 }
@@ -22,10 +24,12 @@ const styles = StyleSheet.create({
   container: {
     marginRight: wp('1%'),
     marginBottom: hp('3%'),
+    alignItems: 'flex-end',
   },
   movieImg: {
     width: wp('32%'),
-    height: hp('20%'),
+    height: hp('24%'),
     resizeMode: 'contain',
   },
+  titleText: {color: colors.white, marginTop: hp('1%'), width: wp('30%')},
 });
