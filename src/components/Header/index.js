@@ -16,7 +16,14 @@ import {
 import images from '../../assets/images';
 import fonts from '../../theme/fonts';
 
-export default function Header({title = 'No Title', leftIcon, rightIcon}) {
+export default function Header({
+  title = 'No Title',
+  leftItem,
+  leftItemOnPress,
+  rightItem,
+  rightItemOnPress,
+  centreItem,
+}) {
   return (
     <View style={styles.container}>
       <SafeAreaView />
@@ -24,15 +31,15 @@ export default function Header({title = 'No Title', leftIcon, rightIcon}) {
         <View style={styles.innerContainer1}>
           <Pressable
             hitSlop={{top: 5, left: 5, right: 5, bottom: 5}}
-            onPress={() => alert(1)}>
-            {leftIcon}
+            onPress={leftItemOnPress}>
+            {leftItem}
           </Pressable>
-          <Text style={styles.titleText}>{title}</Text>
+          {centreItem}
           <Pressable
             style={{position: 'absolute', right: wp('2.5%')}}
             hitSlop={{top: 5, left: 5, right: 5, bottom: 5}}
-            onPress={() => alert(1)}>
-            {rightIcon}
+            onPress={rightItemOnPress}>
+            {rightItem}
           </Pressable>
         </View>
       </ImageBackground>

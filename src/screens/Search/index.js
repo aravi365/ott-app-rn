@@ -1,4 +1,12 @@
-import {FlatList, Image, Pressable, StyleSheet, Text, View} from 'react-native';
+import {
+  FlatList,
+  Image,
+  Pressable,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from 'react-native';
 import React from 'react';
 import fonts from '../../theme/fonts';
 import colors from '../../theme/colors';
@@ -11,6 +19,7 @@ import api from '../../api';
 import Header from '../../components/Header';
 import strings from '../../theme/strings';
 import MovieTile from '../../components/MovieTile';
+import Input from '../../components/Input';
 const dummy = [
   {
     name: 'Rear Window',
@@ -28,76 +37,24 @@ const dummy = [
     name: 'Rear Window',
     'poster-image': 'poster4.jpg',
   },
-  {
-    name: 'The Birds',
-    'poster-image': 'poster6.jpg',
-  },
-  {
-    name: 'Rear Window',
-    'poster-image': 'poster6.jpg',
-  },
-  {
-    name: 'The Birds',
-    'poster-image': 'poster5.jpg',
-  },
-  {
-    name: 'Family Pot',
-    'poster-image': 'poster4.jpg',
-  },
-  {
-    name: 'The Birds',
-    'poster-image': 'poster4.jpg',
-  },
-  {
-    name: 'Rear Window',
-    'poster-image': 'poster5.jpg',
-  },
-  {
-    name: 'Rear Window',
-    'poster-image': 'poster5.jpg',
-  },
-  {
-    name: 'Family Pot',
-    'poster-image': 'poster6.jpg',
-  },
-  {
-    name: 'Family Pot',
-    'poster-image': 'poster5.jpg',
-  },
-  {
-    name: 'Rear Window',
-    'poster-image': 'poster4.jpg',
-  },
-  {
-    name: 'The Birds',
-    'poster-image': 'poster6.jpg',
-  },
-  {
-    name: 'Rear Window',
-    'poster-image': 'poster6.jpg',
-  },
 ];
-export default function Home({navigation, navigate}) {
-  React.useEffect(() => {
-    async function callApi() {
-      let res = await api();
-      console.log('api resp', res);
-    }
-    callApi();
-  }, []);
+export default function Search({navigation}) {
+  const [input, setInput] = React.useState('');
   return (
     <View style={styles.container}>
       <Header
+        title={strings.listing.rc_title}
         leftItem={
           <Image style={styles.leftButtonImg} source={images.backArrow} />
         }
+        leftItemOnPress={() => navigation.goBack()}
         centreItem={
-          <Text style={styles.titleText}>{strings.listing.rc_title}</Text>
+          <View style={styles.inputWrapper}>
+            <Input onChangeText={text => setInput(text)} value={input} />
+          </View>
         }
-        rightItem={
-          <Image style={styles.rightButtonImg} source={images.search} />
-        }
-        rightItemOnPress={() => navigation.navigate('Search')}
+        rightItemOnPress={() => {}}
+        rightItem={undefined}
       />
       <FlatList
         showsVerticalScrollIndicator={false}
@@ -131,10 +88,13 @@ const styles = StyleSheet.create({
   flStyle: {
     paddingBottom: hp('4%'),
   },
-  titleText: {
-    color: colors.white,
-    fontFamily: fonts.type.TRegular,
-    fontSize: fonts.size.font2,
-    marginLeft: wp('3%'),
+  inputWrapper: {
+    height: hp('4%'),
+    width: wp('80%'),
+    borderBottomWidth: 0.5,
+    borderColor: colors.grey,
+    marginHorizontal: wp('4%'),
+    alignSelf: 'center',
+    justifyContent: 'center',
   },
 });
