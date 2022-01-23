@@ -1,8 +1,20 @@
-import * as types from "./types";
+import * as types from './types';
 
 export function toggleLoader(flag) {
   return {
     type: types.IS_LOADING,
     flag,
+  };
+}
+export function fetchData(page) {
+  return {
+    type: types.FETCH_DATA,
+    page,
+  };
+}
+export function storeData(data) {
+  return {
+    type: types.STORE_DATA,
+    data,
   };
 }
