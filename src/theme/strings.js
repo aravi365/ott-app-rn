@@ -1,5 +1,7 @@
 const strings = {
-  home: {},
+  listing: {
+    rc_title: 'Romantic Comedy',
+  },
 };
 
 export default strings;
