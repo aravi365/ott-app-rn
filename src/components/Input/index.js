@@ -35,6 +35,7 @@ export default function Input({
       placeholder={strings.listing.placeholder_search}
       value={value}
       onChangeText={onChangeText}
+      keyboardAppearance="dark"
     />
   );
 }
