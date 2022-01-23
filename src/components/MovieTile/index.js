@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View, Animated, Easing} from 'react-native';
 import React from 'react';
 import {
   widthPercentageToDP as wp,
@@ -8,7 +8,20 @@ import {
 import images from '../../assets/images';
 import colors from '../../theme/colors';
 
-export default function MovieTile({title = 'Untitled', img}) {
+export default function MovieTile({index = 0, title = 'Untitled', img}) {
+  // for smooth display animation
+  const ANIMATION_DURATION = 400;
+  const [scaleValue, setScaleValue] = React.useState(new Animated.Value(0));
+  React.useEffect(() => {
+    Animated.timing(scaleValue, {
+      toValue: 1,
+      duration: ANIMATION_DURATION,
+      delay: index * 10,
+      useNativeDriver: true,
+    }).start();
+  }, []);
+  //end of animation related
+
   //to extract filename without extension
   let name = img.replace(/\.[^/.]+$/, '');
   const [imgUri, setImgUri] = React.useState('');
@@ -24,16 +37,16 @@ export default function MovieTile({title = 'Untitled', img}) {
   };
 
   return (
-    <View style={styles.container}>
+    <Animated.View style={[styles.container, {opacity: scaleValue}]}>
       <Image
         onError={() => onError()}
         style={styles.movieImg}
-        source={imgUri ? imgUri : images.missingPlaceholder}
+        source={imgUri ? images[name] : images.missingPlaceholder}
       />
       <Text numberOfLines={1} style={styles.titleText}>
         {title}
       </Text>
-    </View>
+    </Animated.View>
   );
 }
 

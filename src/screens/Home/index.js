@@ -1,5 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import {FlatList, Image, Pressable, StyleSheet, Text, View} from 'react-native';
+import {
+  FlatList,
+  Image,
+  Platform,
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import React from 'react';
 import fonts from '../../theme/fonts';
 import colors from '../../theme/colors';
@@ -94,7 +102,11 @@ export default function Home({navigation, navigate}) {
           style={styles.flStyle}
           data={searchMode ? dataSearch : data}
           renderItem={({item, index}) => (
-            <MovieTile title={item?.name} img={item['poster-image']} />
+            <MovieTile
+              index={index}
+              title={item?.name}
+              img={item['poster-image']}
+            />
           )}
           onEndReachedThreshold={0.25}
           onEndReached={() => handleEndReached()}
@@ -122,6 +134,7 @@ const styles = StyleSheet.create({
   },
   flStyle: {
     paddingBottom: hp('4%'),
+    marginTop: Platform.OS === 'android' ? hp('6%') : hp('10%'),
   },
   titleText: {
     color: colors.white,
