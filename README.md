@@ -4,6 +4,9 @@
 
 [![React Navigation V6](https://img.shields.io/badge/React%20Navigation-v6.0.6-blue.svg)](https://reactnavigation.org/)
 
+![Webp net-gifmaker](https://user-images.githubusercontent.com/15327129/150726180-e194d3a7-6e8e-4e59-8550-180158e2a841.gif)
+
+
 ## Environment Setup
 
 You can check the react-native website for detailed [guide](https://reactnative.dev/docs/environment-setup)
@@ -45,9 +48,7 @@ If you can't get this to work, see the [Troubleshooting page](https://reactnativ
 Here is the detailed project file tree.
 
 - [api/](./src/api)
-  - [methods/](./src/api/methods)
-  - [ApiConstants.js](./src/api/ApiConstants.js)
-  - [index.js](./src/api/index.js)
+  - [data/](./src/api/data)
 - [assets/](./src/assets)
   - [fonts/](./src/assets/fonts)
   - [images/](./src/assets/images)
@@ -88,3 +89,7 @@ Here is the detailed project file tree.
 `themes`: all visibile elements like colors, fonts, layout related and hardcoded strings are put together here.
 
 `App.js`: App Component is the main component in React which acts as a container for all other components.
+
+#### Todo / Improvements
+- [ ] Unit Testing the components
+- [ ] Splash Screen and App Icon
