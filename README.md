@@ -4,9 +4,9 @@
 
 [![React Navigation V6](https://img.shields.io/badge/React%20Navigation-v6.0.6-blue.svg)](https://reactnavigation.org/)
 
-![Webp net-gifmaker](https://user-images.githubusercontent.com/15327129/150726180-e194d3a7-6e8e-4e59-8550-180158e2a841.gif)
+![ott-app-using-react-native](https://user-images.githubusercontent.com/15327129/150726180-e194d3a7-6e8e-4e59-8550-180158e2a841.gif)
 
-
+[Download Link](https://appdistribution.firebase.dev/i/33132b71638091c4)
 ## Environment Setup
 
 You can check the react-native website for detailed [guide](https://reactnative.dev/docs/environment-setup)
