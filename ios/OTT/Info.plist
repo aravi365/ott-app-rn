@@ -39,10 +39,11 @@
 	<string></string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>AvenirNext-Bold.otf</string>
-		<string>AvenirNext-DemiBold.ttf</string>
-		<string>AvenirNext-Italic.otf</string>
-		<string>AvenirNext-Regular.otf</string>
+		<string>TitilliumWeb-Black.ttf</string>
+		<string>TitilliumWeb-Bold.ttf</string>
+		<string>TitilliumWeb-Light.ttf</string>
+		<string>TitilliumWeb-Regular.ttf</string>
+		<string>TitilliumWeb-SemiBold.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

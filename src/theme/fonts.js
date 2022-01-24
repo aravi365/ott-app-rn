@@ -19,10 +19,11 @@ const weight = {
 };
 
 const type = {
-  avenirbold: 'AvenirNext-Bold',
-  avenirdemibold: 'AvenirNext-DemiBold',
-  aveniritalic: 'AvenirNext-Italic',
-  avenirregular: 'AvenirNext-Regular',
+  TBlack: 'TitilliumWeb-Black',
+  TBold: 'TitilliumWeb-Bold',
+  TSemiBold: 'TitilliumWeb-SemiBold',
+  TRegular: 'TitilliumWeb-Regular',
+  TLight: 'TitilliumWeb-Light',
 };
 
 export default {
